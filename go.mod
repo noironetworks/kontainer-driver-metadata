@@ -5,6 +5,7 @@ go 1.13
 replace (
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
 	github.com/matryer/moq => github.com/rancher/moq v0.0.0-20190404221404-ee5226d43009
+	github.com/rancher/rke => github.com/noironetworks/rke v0.3.1-0.20200903225754-fdde71c5e03b
 	k8s.io/client-go => k8s.io/client-go v0.18.4
 )
 
