@@ -3,6 +3,8 @@ FROM golang:1.13.7-alpine3.10
 ARG DAPPER_HOST_ARCH
 ENV ARCH $DAPPER_HOST_ARCH
 ENV GO111MODULE off
+ENV HTTPS_PROXY="http://proxy.esl.cisco.com:80"
+ENV HTTP_PROXY="http://proxy.esl.cisco.com:80"
 
 RUN apk -U add bash git gcc musl-dev docker vim less file curl wget ca-certificates
 RUN go get -d golang.org/x/lint/golint && \
