@@ -1222,8 +1222,6 @@ spec:
                   istio_config:
                     type: object
                     properties:
-                      install_istio:
-                        type: boolean
                       install_profile:
                         type: string
                   multus:
@@ -1353,8 +1351,13 @@ data:
 {{- end}}
         "opflex-device-delete-timeout": {{.OpflexDeviceDeleteTimeout}},
         "sleep-time-snat-global-info-sync": {{.SleepTimeSnatGlobalInfoSync}},
+{{- /* Commenting code to disable the install_istio flag as the functionality
+    is disabled to remove dependency from istio.io/istio package.
+    Vulnerabilties were detected by quay.io security scan of aci-containers-controller
+    and aci-containers-operator images for istio.io/istio package        
         "install-istio": {{.InstallIstio}},
         "istio-profile": "{{.IstioProfile}}",
+*/}}
 {{- if ne .CApic "true"}}
         "aci-podbd-dn": "uni/tn-{{.Tenant}}/BD-aci-containers-{{.SystemIdentifier}}-pod-bd",
         "aci-nodebd-dn": "uni/tn-{{.Tenant}}/BD-aci-containers-{{.SystemIdentifier}}-node-bd",
@@ -1736,6 +1739,10 @@ rules:
   - clusterrolebindings
   verbs:
   - '*'
+{{- /* Commenting code to disable the install_istio flag as the functionality
+  is disabled to remove dependency from istio.io/istio package.
+  Vulnerabilties were detected by quay.io security scan of aci-containers-controller
+  and aci-containers-operator images for istio.io/istio package
 {{- if ne .InstallIstio "false"}}
 - apiGroups:
   - "install.istio.io"
@@ -1752,6 +1759,7 @@ rules:
   verbs:
   - '*'
 {{- end}}
+*/}}
 - apiGroups:
   - "networking.k8s.io"
   resources:
