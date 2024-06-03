@@ -1610,7 +1610,7 @@ data:
 {{- end}}        
         "enable-ovs-hw-offload": {{.SriovEnable}}
     }
-    opflex-agent-config: |-
+  opflex-agent-config: |-
     {
         "log": {
             "level": "{{.OpflexAgentLogLevel}}"
@@ -1623,12 +1623,12 @@ data:
           "statistics" : { "mode" : "off" },
 {{- end}}
           "timers" : {
-{{- if ne .OpflexAgentPolicyRetryDelayTimer "10" }}
+{{- if ne .OpflexAgentPolicyRetryDelayTimer }}
             "policy-retry-delay": {{.OpflexAgentPolicyRetryDelayTimer}},
+{{- end}}
             "switch-sync-delay": {{.OpflexSwitchSyncDelay}},
             "switch-sync-dynamic": {{.OpflexSwitchSyncDynamic}},
           },
-{{- end}}
           "startup": {
             "enabled": {{.OpflexStartupEnabled}},
             "policy-file": {{.OpflexStartupPolicyFile}},
