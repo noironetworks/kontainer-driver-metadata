@@ -1610,7 +1610,7 @@ data:
 {{- end}}        
         "enable-ovs-hw-offload": {{.SriovEnable}}
     }
-  opflex-agent-config: |-
+    opflex-agent-config: |-
     {
         "log": {
             "level": "{{.OpflexAgentLogLevel}}"
@@ -1622,9 +1622,19 @@ data:
 {{- if eq .OpflexAgentStatistics "false"}}
           "statistics" : { "mode" : "off" },
 {{- end}}
+          "timers" : {
 {{- if ne .OpflexAgentPolicyRetryDelayTimer "10" }}
-          "timers" : { "policy-retry-delay": {{.OpflexAgentPolicyRetryDelayTimer}} },
+            "policy-retry-delay": {{.OpflexAgentPolicyRetryDelayTimer}},
+            "switch-sync-delay": {{.OpflexSwitchSyncDelay}},
+            "switch-sync-dynamic": {{.OpflexSwitchSyncDynamic}},
+          },
 {{- end}}
+          "startup": {
+            "enabled": {{.OpflexStartupEnabled}},
+            "policy-file": {{.OpflexStartupPolicyFile}},
+            "policy-duration": {{.OpflexStartupPolicyDuration}},
+            "resolve-aft-conn": {{.OpflexStartupResolveAftConn}},
+          },
           "notif" : { "enabled" : "false" },
           "asyncjson": { "enabled" : {{.OpflexAgentOpflexAsyncjsonEnabled}} }
         },
