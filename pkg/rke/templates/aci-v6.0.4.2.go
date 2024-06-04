@@ -1623,7 +1623,7 @@ data:
           "statistics" : { "mode" : "off" },
 {{- end}}
           "timers" : {
-{{- if ne .OpflexAgentPolicyRetryDelayTimer }}
+{{- if ne .OpflexAgentPolicyRetryDelayTimer "10" }}
             "policy-retry-delay": {{.OpflexAgentPolicyRetryDelayTimer}},
 {{- end}}
             "switch-sync-delay": {{.OpflexSwitchSyncDelay}},
