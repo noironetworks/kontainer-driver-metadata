@@ -1631,7 +1631,7 @@ data:
           },
           "startup": {
             "enabled": {{.OpflexStartupEnabled}},
-            "policy-file": {{.OpflexStartupPolicyFile}},
+            "policy-file": "/usr/local/var/lib/opflex-agent-ovs/startup/pol.json",
             "policy-duration": {{.OpflexStartupPolicyDuration}},
             "resolve-aft-conn": {{.OpflexStartupResolveAftConn}},
           },
