@@ -1630,10 +1630,10 @@ data:
             "switch-sync-dynamic": {{.OpflexSwitchSyncDynamic}},
           },
           "startup": {
-            "enabled": {{.OpflexStartupEnabled}},
+            "enabled": "{{.OpflexStartupEnabled}}",
             "policy-file": "/usr/local/var/lib/opflex-agent-ovs/startup/pol.json",
             "policy-duration": {{.OpflexStartupPolicyDuration}},
-            "resolve-aft-conn": {{.OpflexStartupResolveAftConn}},
+            "resolve-aft-conn": "{{.OpflexStartupResolveAftConn}}",
           },
           "notif" : { "enabled" : "false" },
           "asyncjson": { "enabled" : {{.OpflexAgentOpflexAsyncjsonEnabled}} }
