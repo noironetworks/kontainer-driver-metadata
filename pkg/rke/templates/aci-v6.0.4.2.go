@@ -1627,19 +1627,19 @@ data:
             "policy-retry-delay": {{.OpflexAgentPolicyRetryDelayTimer}},
 {{- end}}
             "switch-sync-delay": {{.OpflexSwitchSyncDelay}},
-            "switch-sync-dynamic": {{.OpflexSwitchSyncDynamic}},
+            "switch-sync-dynamic": {{.OpflexSwitchSyncDynamic}}
           },
           "startup": {
             "enabled": "{{.OpflexStartupEnabled}}",
             "policy-file": "/usr/local/var/lib/opflex-agent-ovs/startup/pol.json",
             "policy-duration": {{.OpflexStartupPolicyDuration}},
-            "resolve-aft-conn": "{{.OpflexStartupResolveAftConn}}",
+            "resolve-aft-conn": "{{.OpflexStartupResolveAftConn}}"
           },
           "notif" : { "enabled" : "false" },
-          "asyncjson": { "enabled" : "{{.OpflexAgentOpflexAsyncjsonEnabled}}" }
+          "asyncjson": { "enabled" : {{.OpflexAgentOpflexAsyncjsonEnabled}} }
         },
         "ovs": {
-          "asyncjson": { "enabled" : "{{.OpflexAgentOvsAsyncjsonEnabled}}" }
+          "asyncjson": { "enabled" : {{.OpflexAgentOvsAsyncjsonEnabled}} }
         }
     }
 ---
