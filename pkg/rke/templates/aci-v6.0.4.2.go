@@ -1636,10 +1636,10 @@ data:
             "resolve-aft-conn": "{{.OpflexStartupResolveAftConn}}",
           },
           "notif" : { "enabled" : "false" },
-          "asyncjson": { "enabled" : {{.OpflexAgentOpflexAsyncjsonEnabled}} }
+          "asyncjson": { "enabled" : "{{.OpflexAgentOpflexAsyncjsonEnabled}}" }
         },
         "ovs": {
-          "asyncjson": { "enabled" : {{.OpflexAgentOvsAsyncjsonEnabled}} }
+          "asyncjson": { "enabled" : "{{.OpflexAgentOvsAsyncjsonEnabled}}" }
         }
     }
 ---
