@@ -109,7 +109,7 @@ spec:
         type: object
 ---
 {{- if eq .UseAciCniPriorityClass "true"}}
-apiVersion: scheduling.k8s.io/v1beta1
+apiVersion: scheduling.k8s.io/v1
 kind: PriorityClass
 metadata:
   name: acicni-priority
