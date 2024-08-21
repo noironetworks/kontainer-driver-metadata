@@ -2160,11 +2160,11 @@ spec:
               value: "{{.Tenant}}"
 {{- if ne .MultusDisable "true"}}
             - name: MULTUS
-              value: true
+              value: 'True'
 {{- end}}
 {{- if eq .DisableWaitForNetwork "true"}}
             - name: DISABLE_WAIT_FOR_NETWORK
-              value: true
+              value: 'True'
 {{- else}}
             - name: DURATION_WAIT_FOR_NETWORK
               value: "{{.DurationWaitForNetwork}}"
