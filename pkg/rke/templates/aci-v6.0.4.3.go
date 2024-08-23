@@ -1299,7 +1299,7 @@ data:
         "aci-multipod": {{.AciMultipod}},
 {{- end}}
 {{- if .UnknownMacUnicastAction }}
-        "unknown-mac-unicast-action": {{.UnknownMacUnicastAction}},
+        "unknown-mac-unicast-action": "{{.UnknownMacUnicastAction}}",
 {{- end}}
 {{- if ne .EnableOpflexAgentReconnect "false"}}
         "enable-opflex-agent-reconnect": {{.EnableOpflexAgentReconnect}},
