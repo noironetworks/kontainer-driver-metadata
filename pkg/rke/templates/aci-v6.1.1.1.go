@@ -1726,7 +1726,7 @@ data:
             "policy-retry-delay": {{.OpflexAgentPolicyRetryDelayTimer}},
 {{- end}}
 {{- if .OpflexAgentResetWaitDelay}}
-			"reset-wait-delay": {{.OpflexAgentResetWaitDelay}},
+            "reset-wait-delay": {{.OpflexAgentResetWaitDelay}},
 {{- end}}
             "switch-sync-delay": {{.OpflexSwitchSyncDelay}},
             "switch-sync-dynamic": {{.OpflexSwitchSyncDynamic}}
@@ -1740,7 +1740,7 @@ data:
           "notif" : { "enabled" : "false" },
           "asyncjson": { "enabled" : {{.OpflexAgentOpflexAsyncjsonEnabled}} },
 {{- if ne .EnableHppRedirect "false"}}
-		  "enable-hpp-direct": {{.EnableHppRedirect}},
+      "enable-hpp-direct": {{.EnableHppRedirect}},
 {{- end}}
         },
         "ovs": {
