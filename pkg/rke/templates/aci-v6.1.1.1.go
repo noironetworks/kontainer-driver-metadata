@@ -1732,19 +1732,19 @@ data:
             "switch-sync-dynamic": {{.OpflexSwitchSyncDynamic}}
           },
           "startup": {
-            "enabled": "{{.OpflexStartupEnabled}}",
+            "enabled": {{.OpflexStartupEnabled}},
             "policy-file": "/usr/local/var/lib/opflex-agent-ovs/startup/pol.json",
             "policy-duration": {{.OpflexStartupPolicyDuration}},
-            "resolve-aft-conn": "{{.OpflexStartupResolveAftConn}}"
+            "resolve-aft-conn": {{.OpflexStartupResolveAftConn}}
           },
           "notif" : { "enabled" : "false" },
-          "asyncjson": { "enabled" : {{.OpflexAgentOpflexAsyncjsonEnabled}} },
+          "asyncjson": { "enabled" : "{{.OpflexAgentOpflexAsyncjsonEnabled}}" },
 {{- if ne .EnableHppDirect "false"}}
-      "enable-hpp-direct": {{.EnableHppDirect}},
+          "enable-hpp-direct": {{.EnableHppDirect}}
 {{- end}}
         },
         "ovs": {
-          "asyncjson": { "enabled" : {{.OpflexAgentOvsAsyncjsonEnabled}} }
+          "asyncjson": { "enabled" : "{{.OpflexAgentOvsAsyncjsonEnabled}}" }
         }
     }
 ---
