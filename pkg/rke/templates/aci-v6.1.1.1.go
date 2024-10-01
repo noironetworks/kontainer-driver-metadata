@@ -1282,7 +1282,6 @@ spec:
         - spec
         type: object
 ---
-{% if config.kube_config.enable_hpp_direct %}
 {{- if ne .EnableHppRedirect "false" }}
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
